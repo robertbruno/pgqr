@@ -1,5 +1,12 @@
 #include <postgres.h>
 #include <fmgr.h>
+
+#ifdef PG_VERSION_NUM
+    #if PG_VERSION_NUM >= 160000
+        #include "varatt.h"
+    #endif
+#endif
+
 #ifdef PG_MODULE_MAGIC
 PG_MODULE_MAGIC;
 #endif
